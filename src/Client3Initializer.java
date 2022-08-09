@@ -1,5 +1,10 @@
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Client3Initializer extends Application {
 
@@ -8,7 +13,11 @@ public class Client3Initializer extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-
+    public void start(Stage primaryStage) throws IOException {
+        AnchorPane root = FXMLLoader.load(this.getClass().getResource("Client3Form.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.centerOnScreen();
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }

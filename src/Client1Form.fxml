@@ -7,11 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client1FormController">
    <children>
       <Button layoutX="559.0" layoutY="362.0" mnemonicParsing="false" onAction="#BtnClient1Send" text="Send" />
-      <TextField fx:id="txtClient1Msg" layoutX="42.0" layoutY="362.0" prefHeight="26.0" prefWidth="487.0" />
+      <TextField fx:id="txtClient1Msg" layoutX="42.0" layoutY="362.0" onAction="#BtnClient1Sendenter" prefHeight="26.0" prefWidth="487.0" />
       <TextArea fx:id="txtClient1Screen" layoutX="42.0" layoutY="90.0" prefHeight="248.0" prefWidth="583.0" />
       <Label layoutX="225.0" layoutY="10.0" prefHeight="74.0" prefWidth="193.0" text="Client1" textFill="#4b24d1">
          <font>

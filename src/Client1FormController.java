@@ -52,7 +52,18 @@ public class Client1FormController {
 
 //        String getMsg = txtClient1Msg.getText();
         //msg eka yawanawa
-    dataOutputStream2.writeUTF("Client 1 :"+txtClient1Msg.getText());
-    dataOutputStream2.flush();
+//    dataOutputStream2.writeUTF("Client 1 :"+txtClient1Msg.getText());
+//    dataOutputStream2.flush();
+    sendmsg();
+    }
+
+    private void  sendmsg() throws IOException {
+        dataOutputStream2.writeUTF("Client 1 :"+txtClient1Msg.getText());
+        dataOutputStream2.flush();
+    }
+
+    public void BtnClient1Sendenter(ActionEvent actionEvent) throws IOException {
+      sendmsg();
+
     }
 }

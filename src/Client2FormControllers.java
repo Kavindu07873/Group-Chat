@@ -52,7 +52,17 @@ public class Client2FormControllers {
         }).start();
     }
     public void BtnClient2Send(ActionEvent actionEvent) throws IOException {
+//        dataOutputStream1.writeUTF("Client 2 : "+txtClient2Msg.getText());
+//        dataOutputStream1.flush();
+        Sendmsg();
+    }
+
+    private void Sendmsg() throws IOException {
         dataOutputStream1.writeUTF("Client 2 : "+txtClient2Msg.getText());
         dataOutputStream1.flush();
+    }
+
+    public void BtnClient2SendClick(ActionEvent actionEvent) throws IOException {
+        Sendmsg();
     }
 }
