@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39f30485-47ca-46ae-b68d-161c97bd7fa1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client1FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client1FormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client3FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client3FormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client2Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client2Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +38,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "E:/2ND SEMESTER/Interduction to network Programming/New folder (2)/SokcketProgramming-59-60/SocketProgramming",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\2ND SEMESTER\Interduction to network Programming\Course Work\Course Work\Assets" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Client3Initializer">
     <configuration name="Client1Initializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client1Initializer" />
@@ -94,7 +101,8 @@
       <workItem from="1659858159619" duration="621000" />
       <workItem from="1659859427484" duration="821000" />
       <workItem from="1659860290726" duration="211000" />
-      <workItem from="1659860860066" duration="26101000" />
+      <workItem from="1659860860066" duration="26514000" />
+      <workItem from="1660043344640" duration="341000" />
     </task>
     <servers />
   </component>
