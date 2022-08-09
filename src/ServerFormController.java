@@ -53,11 +53,16 @@ public class ServerFormController {
 
                Socket localsocket = serverSocket.accept();
                 Socket localsoket2 = serverSocket.accept();
+                    Socket localsoket3 = serverSocket.accept();
 
 
                     txtServerScreen.appendText("\nClient1 Connected...");
                     txtServerScreen.appendText("\nClient2 Connected...");
+                    txtServerScreen.appendText("\nClient3 Connected...");
 
+                    //Client3
+                    dataOutputStream3 = new DataOutputStream(localsoket3.getOutputStream());
+                    dataInputStream3 = new DataInputStream(localsoket3.getInputStream());
 
 
                     //Client 2
@@ -74,7 +79,7 @@ public class ServerFormController {
 //                    dataOutputStream = new DataOutputStream(localsocket2.getOutputStream());
 //                    dataInputStream = new DataInputStream(localsocket2.getInputStream());
                     while (!Message.equals("exit")){
-
+///////////////////////////////////////////////////////////////////////////////////////
 
                         //msg eka awa Client1
                        Message = dataInputStream.readUTF();
@@ -98,6 +103,10 @@ public class ServerFormController {
                             //Client 1 yawwa
                         dataOutputStream2.writeUTF(Message);
                         dataOutputStream2.flush();
+                        //Client 3 yawwa
+                        dataOutputStream3.writeUTF(Message);
+                        dataOutputStream3.flush();
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
                         //Msg eka awa client2 gen
@@ -110,71 +119,33 @@ public class ServerFormController {
                         //Client 1  yawwa client 2 ge msg eka
                         dataOutputStream2.writeUTF(Message);
                         dataOutputStream2.flush();
+                        //Client 3 yawwa
+                        dataOutputStream3.writeUTF(Message);
+                        dataOutputStream3.flush();
 
+////////////////////////////////////////////////////////////////////////////////////////
 
+                        //Msg eka awa Client3 gen
+                        Message = dataInputStream3.readUTF();
+                        txtServerScreen.appendText("\n"+Message);
 
+                        //Client 1 yawwa
+                        dataOutputStream2.writeUTF(Message);
+                        dataOutputStream2.flush();
+                        //Client 2 yawwa
+                        dataOutputStream.writeUTF(Message);
+                        dataOutputStream.flush();
+                        //Client 3 yawwa
+                        dataOutputStream3.writeUTF(Message);
+                        dataOutputStream3.flush();
+
+///////////////////////////////////////////////////////////////////////////////////////////
                     }
-
-              //      while (!Message.equals("exit")){
-
-//                        //Msg eka awa client2 gen
-//                        Message = dataInputStream1.readUTF();
-//                        txtServerScreen.appendText("\n"+Message);
-//
-//                        //Client2 yawwa client 2 ge msg eka
-//                        dataOutputStream1.writeUTF(Message);
-//                        dataOutputStream1.flush();
-//                        //Client 1  yawwa client 2 ge msg eka
-//                        dataOutputStream3.writeUTF(Message);
-//                        dataOutputStream3.flush();
-               //     }
-
-
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }).start();
-
-
-//        new Thread(() -> {
-//            try {
-//                ServerSocket serverSocket = new ServerSocket(PORT);
-//                txtServerScreen.appendText("Server Started...");
-//
-//               // Socket localsocket = serverSocket.accept();
-//                Socket localsoket2 = serverSocket.accept();
-//
-//             //   txtServerScreen.appendText("\nClient1 Connected...");
-//                txtServerScreen.appendText("\nClient2 Connected...");
-//                dataOutputStream = new DataOutputStream(localsoket2.getOutputStream());
-//
-//            //    dataOutputStream = new DataOutputStream(localsocket.getOutputStream());
-//            //    dataInputStream = new DataInputStream(localsocket.getInputStream());
-////
-////                    dataOutputStream = new DataOutputStream(localsocket2.getOutputStream());
-////                    dataInputStream = new DataInputStream(localsocket2.getInputStream());
-//                while (!Message.equals("exit")){
-//                    //msg eka awa
-//                    Message = dataInputStream.readUTF();
-////                       dataOutputStream.writeUTF(Message);
-//                    // System.out.println(Message);
-//                    txtServerScreen.appendText("\nClient :  "+Message);
-////                        Reply = txtServerScreen.getText();
-////                        dataOutputStream.writeUTF(Reply);
-////                        dataOutputStream.flush()
-//
-//
-//                    // Message = bufferedReader.readLine();
-//                    //dataOutputStream.writeUTF(Message);
-//                    //msg yana eka
-//                    dataOutputStream.writeUTF(Message);
-//                    dataOutputStream.flush();
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }).start();
     }
     public void btnServerSend(ActionEvent actionEvent) throws IOException {
         dataOutputStream.writeUTF(txtServerMsg.getText());

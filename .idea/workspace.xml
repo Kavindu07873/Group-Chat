@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="39f30485-47ca-46ae-b68d-161c97bd7fa1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client1Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client1Form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client1FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client1FormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client2Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client2Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client2FormControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client2FormControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client3Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client3Form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client3FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client3FormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client3Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client3Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Client2Initializer">
+  <component name="RunManager" selected="Application.Client3Initializer">
     <configuration name="Client1Initializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client1Initializer" />
       <module name="Course Work" />
@@ -79,10 +75,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client3Initializer" />
         <item itemvalue="Application.Client2Initializer" />
         <item itemvalue="Application.Client1Initializer" />
         <item itemvalue="Application.ServerInitializer" />
-        <item itemvalue="Application.Client3Initializer" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +94,7 @@
       <workItem from="1659858159619" duration="621000" />
       <workItem from="1659859427484" duration="821000" />
       <workItem from="1659860290726" duration="211000" />
-      <workItem from="1659860860066" duration="24683000" />
+      <workItem from="1659860860066" duration="26101000" />
     </task>
     <servers />
   </component>

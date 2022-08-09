@@ -12,10 +12,9 @@ public class Client1FormController {
 
     public TextField Client1Msg;
     public TextArea Client1Screen;
-    final  int PORT = 5000;
     public TextField txtClient1Msg;
     public TextArea txtClient1Screen;
-
+    final  int PORT = 5000;
     Socket socket;
     DataInputStream dataInputStream2;
     DataOutputStream dataOutputStream2;
