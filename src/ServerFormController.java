@@ -15,8 +15,8 @@ public class ServerFormController {
     public TextField ServerMsg;
     public TextArea ServerScreen;
 
-    final  int PORT = 5000;
-    final  int PORT2 = 5010;
+   // final  int PORT = 5000;
+    final  int PORT = 9010;
 
     public TextField txtServerMsg;
     public TextArea txtServerScreen;
@@ -36,7 +36,9 @@ public class ServerFormController {
 
 
     BufferedReader bufferedReader;
-    String Message = "";
+   String Message = "";
+//    String Message1 = "";
+//    String Message2 = "";
 
    // String Reply = "";
 
@@ -47,7 +49,6 @@ public class ServerFormController {
             new Thread(() -> {
                 try {
             ServerSocket serverSocket = new ServerSocket(PORT);
-          //  ServerSocket serverSocket = new ServerSocket(PORT2);
 
                     txtServerScreen.appendText("Server Started...");
 
@@ -74,72 +75,64 @@ public class ServerFormController {
                    dataOutputStream = new DataOutputStream(localsocket.getOutputStream());
                    dataInputStream = new DataInputStream(localsocket.getInputStream());
 
-
-//
-//                    dataOutputStream = new DataOutputStream(localsocket2.getOutputStream());
-//                    dataInputStream = new DataInputStream(localsocket2.getInputStream());
-                    while (!Message.equals("exit")){
-///////////////////////////////////////////////////////////////////////////////////////
+                  //  String Message = "";
+                    //String Message1 = "";
+                   // String Message2 = "";
+                    while (!Message.equals("exit")) {
 
                         //msg eka awa Client1
-                       Message = dataInputStream.readUTF();
-                     txtServerScreen.appendText("\n"+Message);
-//                        Reply = txtServerScreen.getText();
-//                        dataOutputStream.writeUTF(Reply);
-//                        dataOutputStream.flush()
+                        Message = dataInputStream.readUTF();
+                            txtServerScreen.appendText("\n" + Message);
 
 
-                       // Message = bufferedReader.readLine();
-                        //dataOutputStream.writeUTF(Message);
-                //msg yana eka
-                            //msg eka awa client 2
-//                        Message = dataInputStream2.readUTF();
-//                        txtServerScreen.appendText("\n"+Message);
 
-                        //Client2 yawwa
-                        //Client2 yawwa
-                   dataOutputStream.writeUTF(Message);
-                   dataOutputStream.flush();
+
+
+
+                            dataOutputStream.writeUTF(Message);
+                            dataOutputStream.flush();
                             //Client 1 yawwa
-                        dataOutputStream2.writeUTF(Message);
-                        dataOutputStream2.flush();
-                        //Client 3 yawwa
-                        dataOutputStream3.writeUTF(Message);
-                        dataOutputStream3.flush();
+                            dataOutputStream2.writeUTF(Message);
+                            dataOutputStream2.flush();
+                            //Client 3 yawwa
+                            dataOutputStream3.writeUTF(Message);
+                            dataOutputStream3.flush();
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+
 
                         //Msg eka awa client2 gen
                         Message = dataInputStream2.readUTF();
-                        txtServerScreen.appendText("\n"+Message);
+                        txtServerScreen.appendText("\n" + Message);
 
-                        //Client2 yawwa client 2 ge msg eka
-                        dataOutputStream.writeUTF(Message);
-                        dataOutputStream.flush();
-                        //Client 1  yawwa client 2 ge msg eka
-                        dataOutputStream2.writeUTF(Message);
-                        dataOutputStream2.flush();
-                        //Client 3 yawwa
-                        dataOutputStream3.writeUTF(Message);
-                        dataOutputStream3.flush();
+                            //Client2 yawwa client 2 ge msg eka
+                            dataOutputStream.writeUTF(Message);
+                            dataOutputStream.flush();
+                            //Client 1  yawwa client 2 ge msg eka
+                            dataOutputStream2.writeUTF(Message);
+                            dataOutputStream2.flush();
+                            //Client 3 yawwa
+                            dataOutputStream3.writeUTF(Message);
+                            dataOutputStream3.flush();
 
-////////////////////////////////////////////////////////////////////////////////////////
 
-                        //Msg eka awa Client3 gen
+
+
+
                         Message = dataInputStream3.readUTF();
-                        txtServerScreen.appendText("\n"+Message);
+                        //Msg eka awa Client3 gen
+//                        Message = dataInputStream3.readUTF();
+                        txtServerScreen.appendText("\n" + Message);
 
-                        //Client 1 yawwa
-                        dataOutputStream2.writeUTF(Message);
-                        dataOutputStream2.flush();
-                        //Client 2 yawwa
-                        dataOutputStream.writeUTF(Message);
-                        dataOutputStream.flush();
-                        //Client 3 yawwa
-                        dataOutputStream3.writeUTF(Message);
-                        dataOutputStream3.flush();
+                            //Client 1 yawwa
+                            dataOutputStream2.writeUTF(Message);
+                           dataOutputStream2.flush();
+                            //Client 2 yawwa
+                            dataOutputStream.writeUTF(Message);
+                            dataOutputStream.flush();
+                            //Client 3 yawwa
+                            dataOutputStream3.writeUTF(Message);
+                            dataOutputStream3.flush();
 
-///////////////////////////////////////////////////////////////////////////////////////////
                     }
 
                 } catch (IOException e) {
@@ -147,6 +140,8 @@ public class ServerFormController {
                 }
             }).start();
     }
+
+
     public void btnServerSend(ActionEvent actionEvent) throws IOException {
         dataOutputStream.writeUTF(txtServerMsg.getText());
         dataOutputStream.flush();

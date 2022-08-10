@@ -1,6 +1,10 @@
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -14,7 +18,12 @@ public class Client1FormController {
     public TextArea Client1Screen;
     public TextField txtClient1Msg;
     public TextArea txtClient1Screen;
-    final  int PORT = 5000;
+    final  int PORT = 9010;
+    public TextField txtUserName;
+    public AnchorPane root;
+    public TextField txtUSerNAmeClient;
+    public TextField txtClient1;
+    public Label lbiClient;
     Socket socket;
     DataInputStream dataInputStream2;
     DataOutputStream dataOutputStream2;
@@ -36,10 +45,6 @@ public class Client1FormController {
                   //  System.out.println(Message);
                     txtClient1Screen.appendText("\n"+Message);
 
-
-//                    reply = txtClient1Screen.getText();
-//                    dataOutputStream.writeUTF(reply);
-//                    dataOutputStream.flush();
                 }
 
             } catch (IOException e) {
@@ -48,21 +53,24 @@ public class Client1FormController {
         }).start();
     }
     public void BtnClient1Send(ActionEvent actionEvent) throws IOException {
-
-//        String getMsg = txtClient1Msg.getText();
-        //msg eka yawanawa
-//    dataOutputStream2.writeUTF("Client 1 :"+txtClient1Msg.getText());
-//    dataOutputStream2.flush();
     sendmsg();
+    txtClient1Msg.clear();
     }
 
     private void  sendmsg() throws IOException {
-        dataOutputStream2.writeUTF("Client 1 :"+txtClient1Msg.getText());
+        dataOutputStream2.writeUTF(lbiClient.getText()+"  : "+txtClient1Msg.getText());
         dataOutputStream2.flush();
     }
 
     public void BtnClient1Sendenter(ActionEvent actionEvent) throws IOException {
-      sendmsg();
 
+        sendmsg();
+        txtClient1Msg.clear();
+    }
+
+
+    public void btnonClient(ActionEvent actionEvent) {
+        lbiClient.setText(txtUSerNAmeClient.getText());
+        txtUSerNAmeClient.clear();
     }
 }

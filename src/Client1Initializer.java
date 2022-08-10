@@ -16,6 +16,8 @@ public class Client1Initializer extends Application {
     public void start(Stage primaryStage) throws IOException {
         AnchorPane root = FXMLLoader.load(this.getClass().getResource("Client1Form.fxml"));
         Scene scene = new Scene(root);
+        primaryStage.setTitle("Client1");
+
         primaryStage.centerOnScreen();
         primaryStage.setScene(scene);
         primaryStage.show();

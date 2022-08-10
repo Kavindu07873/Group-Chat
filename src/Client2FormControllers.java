@@ -1,6 +1,9 @@
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,7 +15,11 @@ public class Client2FormControllers {
     public TextArea txtClient2Screen;
 
 
-    final  int PORT = 5000;
+    final  int PORT = 9010;
+    public TextField txtUserName;
+    public AnchorPane root;
+    public TextField txtUSerNAmeClient2;
+    public Label lblClient2;
 //    public TextField txtClient1Msg;
 //    public TextArea txtClient1Screen;
 
@@ -40,10 +47,6 @@ public class Client2FormControllers {
                     //  System.out.println(Message);
                     txtClient2Screen.appendText("\n"+Message);
 
-
-//                    reply = txtClient1Screen.getText();
-//                    dataOutputStream.writeUTF(reply);
-//                    dataOutputStream.flush();
                 }
 
             } catch (IOException e) {
@@ -52,17 +55,23 @@ public class Client2FormControllers {
         }).start();
     }
     public void BtnClient2Send(ActionEvent actionEvent) throws IOException {
-//        dataOutputStream1.writeUTF("Client 2 : "+txtClient2Msg.getText());
-//        dataOutputStream1.flush();
         Sendmsg();
+        txtClient2Msg.clear();
     }
 
     private void Sendmsg() throws IOException {
-        dataOutputStream1.writeUTF("Client 2 : "+txtClient2Msg.getText());
+        dataOutputStream1.writeUTF(lblClient2.getText()+"  : "+txtClient2Msg.getText());
         dataOutputStream1.flush();
     }
 
     public void BtnClient2SendClick(ActionEvent actionEvent) throws IOException {
+        System.out.println("Client 2");
         Sendmsg();
+        txtClient2Msg.clear();
+    }
+
+    public void btnonClient2(ActionEvent actionEvent) {
+        lblClient2.setText(txtUSerNAmeClient2.getText());
+        txtUSerNAmeClient2.clear();
     }
 }

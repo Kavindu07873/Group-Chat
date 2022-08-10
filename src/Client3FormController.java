@@ -1,6 +1,9 @@
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -11,7 +14,11 @@ public class Client3FormController {
     public TextField txtClient3Msg;
     public TextArea txtClient3Screen;
 
-    final  int PORT = 5000;
+    final  int PORT = 9010;
+    public TextField txtUserName;
+    public AnchorPane root;
+    public TextField txtUSerNAmeClient3;
+    public Label lblClient3;
     Socket socket;
     DataInputStream dataInputStream3;
     DataOutputStream dataOutputStream3;
@@ -25,6 +32,8 @@ public class Client3FormController {
                 dataOutputStream3 = new DataOutputStream(socket.getOutputStream());
                 dataInputStream3= new DataInputStream(socket.getInputStream());
                 //msg eka ena eka
+
+
                 while (!Message.equals("exit")){
                     Message = dataInputStream3.readUTF();
                     //  System.out.println(Message);
@@ -43,15 +52,27 @@ public class Client3FormController {
     }
 
     private void sendMsg() throws IOException {
-        dataOutputStream3.writeUTF("Client 3 :"+txtClient3Msg.getText());
+        dataOutputStream3.writeUTF(lblClient3.getText()+"  : "+txtClient3Msg.getText());
         dataOutputStream3.flush();
+
     }
 
     public void BtnClient3Send(ActionEvent actionEvent) throws IOException {
         sendMsg();
+        txtClient3Msg.clear();
     }
 
     public void BtnClient3SendClick(ActionEvent actionEvent) throws IOException {
     sendMsg();
+    txtClient3Msg.clear();
+    }
+
+
+
+    public void btnonClient3(ActionEvent actionEvent) {
+
+        lblClient3.setText(txtUSerNAmeClient3.getText());
+        txtUSerNAmeClient3.clear();
+
     }
 }
